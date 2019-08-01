@@ -1,0 +1,48 @@
+
+
+Q:
+
+假設現在有一種簡易的文字編碼規則如下：將訊息每個字母往後推兩位再傳出去，例如 A→C、B→D，而後面的 Y→A、Z→B，
+所有的訊息都是大寫字母。現在給你編過碼的文字，請你解讀回原本的訊息。
+輸入一個字串，代表要破解的文字編碼。
+請輸出解碼後的文字。
+
+
+
+
+A:
+
+
+#include<iostream>
+
+using namespace std;
+
+char word[100];
+int i;
+
+int main(){
+
+cin>>word;
+
+for(i=0;i<100;i++)
+{
+    if(word[i]=='\0') //空白
+        break;
+    else if(word[i]==65 || word[i]== 66)  //A B倒退
+        {
+            word[i]+=24;
+            cout<<word[i];
+        }
+    else
+        {
+            word[i]-=2;
+            cout<<word[i];
+        }
+
+
+}
+
+
+
+
+}
