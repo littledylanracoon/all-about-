@@ -1,0 +1,35 @@
+https://blog.csdn.net/JIEJINQUANIL/article/details/50802902
+
+getline:接受一个字符串，可以接收空格并输出
+
+
+Q:
+輸入資料有三行包含空格的文字，即三位鑑賞家所寫的評語。(每句評語最長不會超過100個字元)
+請將這三行文字依3-1-2的順序輸出，也就是原本的第三句先輸出，再輸出原本的第一句，最後是原本的第二句。
+
+
+A:
+
+#include<iostream>  
+  
+#include<string>  
+  
+using namespace std;  
+  
+int main()  
+  
+{  
+  
+    string a,b,c;  
+   
+  
+    getline(cin,a);  
+  
+    getline(cin,b);  
+  
+    getline(cin,c);  
+  
+    cout<<c<<endl<<a<<endl<<b<<endl;  
+  
+  
+ }    
