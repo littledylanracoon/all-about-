@@ -2,14 +2,14 @@ http://www.tcgs.tc.edu.tw/~sagit/cpp/q6.htm
 
 stringstream 主要是用在將一個字串分割，可以先用 clear( ) 以及 str( ) 將指定字串設定成一開始的內容，再用 >> 把個別的資料輸出
 
-Q:
+Q1:
 
 輸入資料有三行(每行最多100字元)，每行有一個以上的整數(所有數字均>=0)，代表這三組居民打死的蚊子數。
 請輸出打死蚊子總數最多的組別(1~3)，以及他們總共打死幾隻蚊子。
 
 
 
-A:
+A1:
 
 
 #include<iostream>
@@ -55,3 +55,42 @@ cout<<h+1<<" "<<t<<endl;
 
 
 }
+
+Q2:
+
+輸入資料共有三行文字，每行有一個以上的名字，代表這行隊伍裡位置的順序。
+請找出名為 BILL 的人是在哪一行的第幾個(從1開始)，最多只會有一位 BILL，而如果 BILL 不在這裡面，則輸出 NO。
+
+A2:
+
+#include<sstream>
+#include<string>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int c=0,h,k;
+    string s;
+    stringstream ss;
+    for(int i=1;i<=3;i++)
+    {
+        getline(cin,s);
+        ss.clear();
+        ss.str(s);
+        for(int j=1;;j++)
+        {
+            string a;
+            ss>>a;
+            if(ss.fail())break;
+            if(a=="BILL"){
+            h=i;
+            k=j;
+            c++;}
+        }
+    }
+    if(c==1) cout<<h<<k<<endl;
+    else cout<<"NO"<<endl;
+    return 0;
+}
+
+
