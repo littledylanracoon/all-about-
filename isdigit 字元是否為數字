@@ -1,0 +1,60 @@
+**將某字元轉成數字，並不是 int(b[a])，而是  b[a]-'0' 
+
+'0' 的值是 48，而 '9' 的值是 57，
+所以 '9'-'0' 才會是 9。 
+
+
+
+**isdigit()這個函式是專門用來告訴你傳入的字元是否為數字(‘0’-‘9’). 所以isdigit()有一個參數. 
+這個參數是一個字元參數.而isdigit()會回傳一個int.如果傳入的字元不是數字的話isdigit()會回傳0. 如果傳入的字元是數字的話isdigit()會回傳一個不是0的值
+
+头文件：#include <ctype.h>
+
+定义函数：int isdigit(int c);
+
+函数说明：检查参数 c 是否为阿拉伯数字0 到9。
+
+返回值：若参数c 为阿拉伯数字，则返回true，否则返回null(0)。
+
+附加说明：此为宏定义，非真正函数。
+
+范例：找出str 字符串中为阿拉伯数字的字符。
+纯文本复制
+#include <ctype.h>
+main(){
+    char str[] = "123@#FDsP[e?";
+    int i;
+    for(i = 0; str[i] != 0; i++)
+        if(isdigit(str[i]))
+            printf("%c is an digit character\n", str[i]);
+            
+            
+            
+ex:
+
+Q:
+輸入資料有三行，每行有100個以內的字元(不包含空格)，每行至少有一個字元是數字而且每行的數字不會超過8個
+請將每行非數字的字元去除之後，可以得到一個數字，再將這三個數字加起來，並輸出其結果。
+
+
+A:
+
+#include<iostream>
+#include<cstdlib>
+#include<string.h>
+using namespace std;
+int main()
+{
+    char a[100];
+    int tmp = 0, b=0;
+    for(int i = 0; i<3; i++)
+    {
+        tmp = 0;
+        cin >> a;
+        for (int j = 0; j < strlen(a); j++)
+            if(isdigit(a[j])){
+                tmp = tmp * 10 + a[j]-48;}
+        b += tmp;
+    }
+    cout << b;
+}
