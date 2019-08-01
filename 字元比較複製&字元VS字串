@@ -1,0 +1,71 @@
+strcmp:
+strcmp是C語言的函式之一，來自C語言標準函式庫，定義於string.h，
+它需要兩個字串當作參數，比較兩個字串是否相等，相等就回傳 0，第一個字串大於第二個字串回傳正值，反之回傳負值。 
+
+strcpy:
+string.h 的函數 strcpy() ，需要兩個字串當作參數，然後把第二個參數的字串複製到第一個參數的字串中，然後回傳第一個參數。 
+
+字串VS字元:
+1、类型不同，char是字符类型， String是字符串类型。
+
+2、String字符串是用""来包含串的， char是用''来包含单字符的。
+
+char a='1';//定义一个字符。
+
+String b="dadsa";//定义一个字符串。
+
+3、String内部用来存储的结果是一个char字符数组。
+
+
+Q:
+第一行有一個正整數 N (1<=N<=100)，代表這筆名單的人數，接下來的 N 行，每行有一個人名。
+請將這些人名依字母順序排序後，依照一行一個名字的格式輸出。
+
+
+A:
+
+#include<stdio.h>  
+  
+#include<string.h>  
+  
+   
+  
+int main(){  
+  
+  char temp[100];  
+  
+  int n, i, j;  
+  
+  scanf("%d", &n);  
+  
+  char name[n][100];  //有n筆 一筆100個空間  若為string name[n] 代表有n個字串   
+  
+  for(i=0;i<n;i++)  
+  
+    scanf("%s", name[i]);  
+  
+  for(i=0;i<n;i++){  
+  
+    for(j=i+1;j<n;j++){  
+  
+      if(strcmp(name[i],name[j])>=0){  
+  
+      strcpy(temp,name[i]);  
+  
+      strcpy(name[i],name[j]);  
+  
+      strcpy(name[j],temp);  
+  
+      }  
+  
+    }  
+  
+  }  
+  
+  for(i=0;i<n;i++)  
+  
+    printf("%s\n", name[i]);  
+  
+  return 0;  
+  
+}   
