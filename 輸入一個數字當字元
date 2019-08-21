@@ -1,0 +1,33 @@
+Q:輸入一個數字 分割位數
+第一個位數乘以 1。
+第二個位數乘以 2。
+第三個位數乘以 3。
+第四個位數乘以 4。
+第五個位數乘以 5。
+第六個位數乘以 6。
+第七個位數乘以 7。 這樣
+
+
+A:
+#include<iostream>
+using namespace std;
+int main()
+{
+	int s=0;
+	int num[9];
+	                string a;
+	cin>>a;
+ 	                for(int i=0;i<7;i++)      //假說 a="1234567"，而 a[6] 並不是 7 而是 '7'，要 a[6]-'0' 才會變成 7
+	{
+		              num[i]=a[i]-'0';
+	}
+	for(int i=0;i<7;i++)
+	{
+		s+=(num[i]*(i+1));
+	}
+
+	if((s%10)==0) cout<<0<< endl;
+	else cout<<(10-(s%10))<< endl;
+
+return 0;
+}
