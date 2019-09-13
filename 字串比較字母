@@ -1,0 +1,73 @@
+
+
+
+Q:
+輸入資料有一個由大小寫F字母所組成的字串，最大長度為10000。
+請輸出這個字串中，由連續大寫F所組成的部分最大的長度為多少。
+
+
+A:
+輸入1:
+FFFfF
+
+輸入2:
+FfFfF
+
+輸出1:
+3
+
+輸出2:
+1
+
+
+A:
+
+
+#include<iostream>
+#include<cstring>
+char num[10001];    //FFFFfFFfFFfFffFFFFFFfFfFffFFfFfFFfFFffFFFFFFFFFFFF
+int c=0,k=0,f;
+using namespace std;
+
+int main(){
+
+cin>>num;
+
+k=strlen(num);
+for(int i=0;i<k;i++)
+{
+
+    if(num[i]=='F')
+    c++;
+    else{
+        if(k==0){
+            k=1;
+            f=c;
+            c=0;
+        }
+        else{
+            if(c>f){
+                f=c;
+                c=0;
+            }
+            else
+                c=0;
+
+        }
+
+
+
+
+
+    }
+
+}
+
+if(c>f)
+    f=c;
+
+
+
+cout<<f<<endl;
+
+}
