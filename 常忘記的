@@ -1,0 +1,72 @@
+
+1. 二維陣列vs字串
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main(){
+int g;
+cin>>g;
+char test[g][501];
+
+for(int i = 1;i <= g; i++){
+    cin>>test[i];
+    cout<<i<<endl;
+
+}
+for(int k = 1;k <= g; k++)
+    cout<<test[k]<<endl;
+
+}
+
+run:
+le
+4
+erg
+1
+sthj
+2
+srgn
+3
+wer
+4
+erg
+sthj
+srgn
+wer
+
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main(){
+int g;
+string test;
+cin>>g;
+
+for(int i = 1;i <= g; i++){
+    cin>>test[i];
+    cout<<i<<endl;
+
+}
+for(int k = 1;k <= 4; k++)
+    cout<<test[k]<<endl;
+
+}
+
+
+run:
+4
+werth
+1
+2
+3
+4
+w
+e
+r
+t
+
+
