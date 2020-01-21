@@ -1,4 +1,21 @@
 
+Q:
+輸入資料若干行，讀取到 EOF 為止。每行含有1個字串，就是需要解密的密碼。
+
+A:
+#include<iostream>
+using namespace std;
+int main(){
+    string s;
+    while(getline(cin, s)){
+        for(int i = 0; i < s.size(); i++){
+            char c = s[i] - 7;
+            cout << c;
+        }
+        cout << endl;
+    }
+}
+
 
 Q:
 
