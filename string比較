@@ -1,0 +1,19 @@
+
+ https://www.cplusplus.com/reference/string/string/find/
+ string::find
+
+ std::string str ("There are two needles in this haystack with needles.");
+ std::string str2 ("needle");
+
+  // different member versions of find in the same order as above:
+  std::size_t found = str.find(str2); //比對好並回傳找到字串的開頭位址
+  if (found!=std::string::npos) //判斷found是否是那個開頭位址 如果比對後發現str根本就沒有包含str2的substring 它可能就會回傳像npos的東西~
+    std::cout << "first 'needle' found at: " << found << '\n';
+    
+   
+   
+ https://www.cplusplus.com/reference/string/string/compare/
+ str1.compare(str2)
+ 
+  if (str1.compare(str2) != 0)
+    std::cout << str1 << " is not " << str2 << '\n';
