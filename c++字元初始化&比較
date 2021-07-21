@@ -1,0 +1,19 @@
+class Solution {
+public:
+    char slowestKey(vector<int>& releaseTimes, string keyPressed) {
+        int compare = releaseTimes[0];
+        char goal[1] = "";
+        goal[0] = keyPressed[0];
+        for(int i = 1; i < releaseTimes.size(); i++){
+            if(releaseTimes[i] - releaseTimes[i-1] > compare){
+                compare = releaseTimes[i] - releaseTimes[i-1];
+                goal[0] = keyPressed[i];
+            }
+            else if(releaseTimes[i] - releaseTimes[i-1] == compare){
+                if(goal[0] < keyPressed[i])
+                    goal[0] = keyPressed[i];
+            }            
+        }
+        return goal[0];
+    }
+};
