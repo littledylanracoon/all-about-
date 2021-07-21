@@ -1,0 +1,19 @@
+substr!
+
+class Solution {
+public:
+    string largestOddNumber(string num) {
+        int rec = -1;
+        for(int i = 0; i < num.size(); i++){
+            if(num[i] % 2 == 1){  
+                rec = i;
+            }
+        }
+        cout << rec << endl; 
+        if(rec == -1)
+            return "";
+        else
+            return num.substr(0, rec+1);
+            
+    }
+};
