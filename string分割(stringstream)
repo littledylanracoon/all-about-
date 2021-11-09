@@ -1,0 +1,14 @@
+class Solution {
+public:
+    string reformatDate(string date) {
+        int fin[3] = {0};
+        vector<string> result;
+        stringstream ss(date);
+        string tok;
+        while(getline(ss, tok, ' '))
+            result.push_back(tok);
+        return tok;
+    }
+};
+
+把string放進stringstream 切出來的放到tok 切割符號為空格
